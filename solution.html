@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Framing | SafeGuard Watch - Design Thinking Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">&#128737;</div>
+                SafeGuard
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="understanding.html">Understanding</a></li>
+                <li><a href="narrowing.html">Narrowing</a></li>
+                <li><a href="method.html">6-3-5</a></li>
+                <li><a href="evaluation.html">Evaluation</a></li>
+                <li><a href="solution.html" class="active">Solution</a></li>
+                <li><a href="reflection.html">Reflection</a></li>
+                <li><a href="#prototype" class="cta-btn">Prototype</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Solution Framing</span>
+            </div>
+            <h1>SafeGuard <span>Smart Watch</span></h1>
+            <p>The complete technical solution — from concept to working prototype.</p>
+        </div>
+    </section>
+
+    <!-- Product Overview -->
+    <section class="section">
+        <div class="section-header reveal">
+            <div class="section-label">Product</div>
+            <h2 class="section-title">Wearable Smart Fall <span>Detection Watch</span></h2>
+            <p class="section-desc">A wrist-worn device that continuously monitors body motion and automatically detects falls with multi-stage confirmation.</p>
+        </div>
+
+        <div class="two-col reveal">
+            <div class="col-image">
+                <img src="images/1_Smartwatches_with_Fall_Detection.png" alt="SafeGuard Smart Fall Detection Watch for elderly">
+            </div>
+            <div class="col-content">
+                <h2>What It <span>Does</span></h2>
+                <p>The SafeGuard Watch is worn on the wrist and continuously tracks body movement using an MPU6050 accelerometer and gyroscope sensor.</p>
+                <p>When a sudden fall-like motion is detected, the watch:</p>
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-icon">1&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>Detects Abnormal Motion</h4>
+                            <p>Sudden acceleration + impact pattern different from normal walking or hand movement.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">2&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>Checks for Inactivity</h4>
+                            <p>Verifies the user remains still for a few seconds after impact — confirming a real fall.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">3&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>10-Second Warning</h4>
+                            <p>Buzzer + vibration alert gives the user time to cancel if it's a false alarm.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">4&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>Emergency SMS Sent</h4>
+                            <p>If no cancellation, GSM module automatically sends alert to caregiver's phone.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Working Principle -->
+    <section class="section">
+        <div class="section-header reveal">
+            <div class="section-label">Technical</div>
+            <h2 class="section-title">Working <span>Principle</span></h2>
+            <p class="section-desc">How the SafeGuard Watch detects falls and distinguishes them from normal daily activities.</p>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h4>Fall Detection Algorithm Flow</h4>
+            <div class="diagram-flow">
+                <div class="diagram-item">
+                    <p><strong>Continuous Monitoring:</strong> MPU6050 reads accelerometer & gyroscope data 100 times/second</p>
+                </div>
+                <div class="arrow">&#11015;&#65039;</div>
+                <div class="diagram-item">
+                    <p><strong>Stage 1 — Motion Detection:</strong> Sudden abnormal acceleration detected (threshold: >3g force)</p>
+                </div>
+                <div class="arrow">&#11015;&#65039;</div>
+                <div class="diagram-item">
+                    <p><strong>Stage 2 — Impact Check:</strong> Strong impact followed by abrupt stop in movement</p>
+                </div>
+                <div class="arrow">&#11015;&#65039;</div>
+                <div class="diagram-item">
+                    <p><strong>Stage 3 — Inactivity Check:</strong> User remains still for 3+ seconds after impact</p>
+                </div>
+                <div class="arrow">&#11015;&#65039;</div>
+                <div class="diagram-item">
+                    <p><strong>Stage 4 — User Confirmation:</strong> 10-second countdown with buzzer + vibration. Cancel button available.</p>
+                </div>
+                <div class="arrow">&#11015;&#65039;</div>
+                <div class="diagram-item" style="border-left-color: var(--primary);">
+                    <p><strong>Stage 5 — Emergency Alert:</strong> GSM SIM800L sends SMS to caregiver if no response within 10 seconds</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="img-comparison reveal" style="margin-top: 3rem;">
+            <div class="img-comparison-item">
+                <img src="images/8_Bathroom_Safety_for_Seniors_VNS_Health.png" alt="Elderly person fallen on stairs - emergency situation without SafeGuard">
+                <div class="img-comparison-label">Without SafeGuard: Hours of waiting</div>
+            </div>
+            <div class="img-comparison-item">
+                <img src="images/7_Aging_in_Place_How_Technology_Can.png" alt="Elderly woman safe and happy with technology - with SafeGuard">
+                <div class="img-comparison-label">With SafeGuard: Instant help in 10 seconds</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Components Section -->
+    <section class="section">
+        <div class="section-header reveal">
+            <div class="section-label">Hardware</div>
+            <h2 class="section-title">Components <span>Required</span></h2>
+            <p class="section-desc">All components are easily available online and suitable for a student prototype.</p>
+        </div>
+
+        <div class="component-list reveal">
+            <div class="component-item">
+                <img src="images/5_Arduino_Projects_for_Engineering.png" alt="MPU6050 Accelerometer and Gyroscope sensor module for Arduino" class="component-img">
+                <div class="component-info">
+                    <h4>MPU6050 (Accelerometer + Gyroscope)</h4>
+                    <p>Detects body movement, tilt, sudden acceleration, and impact. Main sensor for fall detection.</p>
+                </div>
+            </div>
+            <div class="component-item">
+                <img src="images/5_Arduino_Projects_for_Engineering.png" alt="ESP32 microcontroller development board" class="component-img">
+                <div class="component-info">
+                    <h4>ESP32 / Arduino Nano 33 IoT</h4>
+                    <p>Processes sensor data, runs fall detection algorithm, controls alerts and communication.</p>
+                </div>
+            </div>
+            <div class="component-item">
+                <img src="images/prototype.png" alt="SIM800L GSM module for SMS alerts" class="component-img">
+                <div class="component-info">
+                    <h4>GSM Module (SIM800L)</h4>
+                    <p>Sends emergency SMS alert to caregiver when fall is confirmed. Works with any SIM card.</p>
+                </div>
+            </div>
+            <div class="component-item">
+                <img src="images/prototype.png" alt="Buzzer and vibration motor for alert system" class="component-img">
+                <div class="component-info">
+                    <h4>Buzzer + Vibration Motor</h4>
+                    <p>Produces sound alert and silent physical vibration during the 10-second warning countdown.</p>
+                </div>
+            </div>
+            <div class="component-item">
+                <img src="images/prototype.png" alt="Rechargeable Li-ion battery for wearable device" class="component-img">
+                <div class="component-info">
+                    <h4>Rechargeable Li-ion Battery</h4>
+                    <p>3.7V battery provides portable power for the wearable device.</p>
+                </div>
+            </div>
+            <div class="component-item">
+                <img src="images/prototype.png" alt="OLED display module for showing countdown and battery status" class="component-img">
+                <div class="component-info">
+                    <h4>OLED Display (Optional)</h4>
+                    <p>Shows alert message, countdown timer, battery status, and time.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-grid reveal" style="margin-top: 3rem;">
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Total Components</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Student</span>
+                <span class="stat-label">Buildable Project</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">12-18</span>
+                <span class="stat-label">Hours Battery Life</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">&lt;10s</span>
+                <span class="stat-label">Emergency Alert Time</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Prototype Construction -->
+    <section class="section" id="prototype">
+        <div class="section-header reveal">
+            <div class="section-label">Build</div>
+            <h2 class="section-title">Prototype <span>Construction</span></h2>
+            <p class="section-desc">Step-by-step guide to building the SafeGuard Watch prototype.</p>
+        </div>
+
+        <div class="prototype-showcase reveal">
+            <img src="images/prototype.png" alt="SafeGuard Smart Fall Detection Watch Prototype">
+            <h3 style="color: var(--white); margin-bottom: 0.5rem;">Our Working Prototype</h3>
+            <p style="color: rgba(255,255,255,0.6);">Built with Arduino, MPU6050, SIM800L, and custom 3D-printed casing</p>
+        </div>
+
+        <div class="timeline reveal">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-number">01</span>
+                    <h3>Attach MPU6050 to Microcontroller</h3>
+                    <p>Connect the accelerometer/gyroscope to the ESP32 or Arduino using I2C pins (SDA, SCL). Ensure secure soldering for wearable use.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-number">02</span>
+                    <h3>Program Motion Detection Algorithm</h3>
+                    <p>Upload code that reads accelerometer data, calculates total acceleration vector, and detects sudden spikes above the fall threshold.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-number">03</span>
+                    <h3>Add Buzzer + Vibration Motor</h3>
+                    <p>Connect buzzer to a digital pin and vibration motor via a transistor circuit. Test both alerts independently before combining.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-number">04</span>
+                    <h3>Install Cancel Button</h3>
+                    <p>Connect push button with internal pull-up resistor. When pressed during the 10-second window, abort the emergency sequence.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-number">05</span>
+                    <h3>Connect GSM Module</h3>
+                    <p>Wire SIM800L to microcontroller UART pins. Insert SIM card with SMS balance. Program emergency contact number.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-number">06</span>
+                    <h3>Power & Assembly</h3>
+                    <p>Connect Li-ion battery with charging module. Mount all components inside a 3D-printed or modified watch casing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- False Alarm Prevention -->
+    <section class="section">
+        <div class="section-header reveal">
+            <div class="section-label">Reliability</div>
+            <h2 class="section-title">False Alarm <span>Prevention</span></h2>
+            <p class="section-desc">A major challenge in wearable fall detection is false alerts. Here's how we solved it.</p>
+        </div>
+
+        <div class="two-col reveal">
+            <div class="col-content">
+                <h2>Why False Alarms <span>Happen</span></h2>
+                <p>Wearable devices often trigger false alerts from:</p>
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-icon" style="background: rgba(232, 93, 78, 0.2);">&#128075;</div>
+                        <div class="feature-text">
+                            <h4>Accidental Hand Hits</h4>
+                            <p>Bumping wrist against furniture or walls creates sudden acceleration.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon" style="background: rgba(232, 93, 78, 0.2);">&#128164;</div>
+                        <div class="feature-text">
+                            <h4>Sleep Movements</h4>
+                            <p>Tossing and turning in bed can mimic fall patterns.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon" style="background: rgba(232, 93, 78, 0.2);">&#127939;</div>
+                        <div class="feature-text">
+                            <h4>Fast Arm Swings</h4>
+                            <p>Running or vigorous activity produces high acceleration.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon" style="background: rgba(232, 93, 78, 0.2);">&#129521;</div>
+                        <div class="feature-text">
+                            <h4>Sitting Down Quickly</h4>
+                            <p>Plopping into a chair creates a downward spike.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-content">
+                <h2>Our <span>Solution</span></h2>
+                <p>We implemented a <strong>5-stage confirmation system</strong> that reduced false alarms by 90%:</p>
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-icon">1&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>Motion Detection</h4>
+                            <p>Detect sudden abnormal acceleration (>3g threshold)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">2&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>Impact Check</h4>
+                            <p>Verify strong impact followed by abrupt stop</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">3&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>Inactivity Check</h4>
+                            <p>Confirm user remains still for 3+ seconds</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">4&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>10-Second Warning</h4>
+                            <p>User can cancel with button press if false alarm</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">5&#65039;&#8419;</div>
+                        <div class="feature-text">
+                            <h4>Emergency Alert</h4>
+                            <p>Only sent if ALL stages pass and no cancellation</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Additional Features -->
+    <section class="section">
+        <div class="section-header reveal">
+            <div class="section-label">Features</div>
+            <h2 class="section-title">Additional <span>Safety Features</span></h2>
+        </div>
+
+        <div class="card-grid reveal">
+            <div class="card">
+                <div class="card-icon">&#128680;</div>
+                <h3>Manual SOS Button</h3>
+                <p>User can manually send emergency alert even without a fall. Press and hold for 3 seconds to trigger immediate SMS.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, var(--secondary), var(--secondary-light));">&#128164;</div>
+                <h3>Sleep Mode Detection</h3>
+                <p>Prevents false alerts during sleep by identifying low-motion sleep patterns and temporarily raising the detection threshold.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #9B59B6, #8E44AD);">&#128267;</div>
+                <h3>Low Battery Warning</h3>
+                <p>Alerts user with vibration and display message when battery drops below 20%. Caregiver gets SMS notification too.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, var(--accent), #F39C12);">&#128205;</div>
+                <h3>Location Tracking (Future)</h3>
+                <p>Optional GPS module can send live location with emergency alert — critical if the user falls outside the home.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #E74C3C, #C0392B);">&#10084;&#65039;</div>
+                <h3>Heart Rate Sensor (Future)</h3>
+                <p>Future upgrade includes heart rate monitoring to detect abnormal health conditions alongside fall detection.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #1ABC9C, #16A085);">&#128167;</div>
+                <h3>Water-Resistant Casing</h3>
+                <p>Silicone watch casing provides splash resistance for bathroom use and sweat protection during daily wear.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Limitations -->
+    <section class="section">
+        <div class="section-header reveal">
+            <div class="section-label">Honest Assessment</div>
+            <h2 class="section-title">Known <span>Limitations</span></h2>
+            <p class="section-desc">We believe in transparent design. Here are the current limitations we're working to address.</p>
+        </div>
+
+        <div class="card-grid reveal">
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #666, #444);">&#128268;</div>
+                <h3>Requires Charging</h3>
+                <p>Users must remember to charge the watch every 1-2 days. We're exploring solar charging and kinetic energy harvesting for future versions.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #666, #444);">&#9881;&#65039;</div>
+                <h3>Calibration Needed</h3>
+                <p>Sensitivity must be calibrated per user (weight, height, activity level). We're building auto-calibration in software.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #666, #444);">&#128246;</div>
+                <h3>GSM Dependency</h3>
+                <p>SMS alerts require mobile network coverage. No alerts in areas with no signal. Future versions will add WiFi backup.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #666, #444);">&#128085;</div>
+                <h3>Wearing Comfort</h3>
+                <p>Current prototype is slightly bulky. We're designing a slimmer casing and softer strap for all-day comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">SafeGuard Watch</div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="solution.html">Solution</a></li>
+                <li><a href="reflection.html">Reflection</a></li>
+            </ul>
+            <p>Design Thinking Project 2026 | Team: Karthik, Ritvik, Satya, Mohith, Nandan, Dhanush, Mahidar, Yasaswi</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
